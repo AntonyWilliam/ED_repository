@@ -1,4 +1,10 @@
-import omenu
+# import omenu
+# import usuarionovo
+# import outromenu
+import sys
+reunioespublicas = []
+reunioesprivadas = []
+sistema = True
 usuarios = []
 '''global status (dando erro)'''
 status = "nulo"
@@ -10,15 +16,10 @@ def menu1():
     if status == "s":
         usuarioativo()
     elif status == "n":
-        usuarionovo()
+        usuarios.append(usuarionovo())
 
-    while status != "x":
-        menu1()
-    '''falta um break'''
-
-
-menu1()
-
+    elif status == "x":
+        sys.exit()
 
 def usuarionovo():
 
@@ -28,7 +29,7 @@ def usuarionovo():
         username = str(input("Crie seu nome de usuário: "))
 
     funcao = str(input("Qual a sua função? c (Coordenador), g (gestor) ou o(outra): "))
-    while funcao != "c" or "g" or "o":
+    while funcao != "c" and funcao !="g" and funcao !="o":
         print("Comando INVÁLIDO! Tente Novamente!")
         funcao = str(input("Qual a sua função? c (Coordenador), g (gestor) ou o(outra): "))
 
@@ -43,8 +44,8 @@ def usuarionovo():
     usuarios.append(senha)
     usuarios.append(funcao)
 
-
 def usuarioativo():
+
 
     username = str(input("Digite seu Username: "))
     senha = str(input("Digite sua senha: "))
@@ -53,15 +54,22 @@ def usuarioativo():
         uindex = usuarios.index(username)
         sindex = uindex + 1
         findex = sindex + 1
-
+        # essa estrutura é temporaria ate eu conseguir concertar os imports
         if usuarios[sindex] == senha:
 
             if usuarios[findex] == "c":
+                import coordenadormenu
                 print("Funçao de coordenador")
+                coordenadormenu.omenuC()
+
             elif usuarios[findex] == "g":
+                import gestormenu
                 print("Funçao de gestor")
+                gestormenu.Gestormenu()
             else:
+                import outromenu
                 print("Funçao de usuario comum")
+                outromenu.ousuariomenu()
         else:
             print("Senha INCORRETA!")
 
