@@ -1,11 +1,16 @@
-#tentei importar para a main mas ainda nao consegui
+
 def usuarionovo():
 
-    usuario = []
     username = str(input("Crie seu nome de usuário: "))
-    while username in usuario:
-        print("Username ja existe! Tente Novamente!")
-        username = str(input("Crie seu nome de usuário: "))
+
+    arq = open('arquivoDeLogin.txt', 'r')
+    for linha in arq:
+        valor = linha.split()
+        while valor[0] == username:
+            print("Username ja existe! Tente Novamente!")
+            username = str(input("Crie seu nome de usuário: "))
+
+    arq.close()
 
     funcao = str(input("Qual a sua função? c (Coordenador), g (gestor) ou o(outra): "))
     while funcao != "c" and funcao != "g" and funcao != "o":
@@ -19,19 +24,19 @@ def usuarionovo():
         senha = str(input("Crie sua senha: "))
         confirmasenha = str(input("Confirme sua senha: "))
 
-    usuario.append(username)
-    usuario.append(senha)
-    usuario.append(funcao)
+    arq = open('arquivoDeLogin.txt', 'r')
+    conteudo = arq.readlines()
+
+    argumento = str(f"{username} {senha} {funcao} \n")
+
+    conteudo.append(argumento)
+
+    arq = open('arquivoDeLogin.txt', 'w')
+    arq.writelines(conteudo)
+    arq.close()
 
 
-    return usuario
 
 
-usuarionovo()
 
 
-def main():
-
-    print("Desespero")
-
-main()

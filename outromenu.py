@@ -1,18 +1,23 @@
-import reuniao
+import reuniaolist
 def ousuariomenu():
 
-     opcao = str(input("Escolha uma opção - 1(criar reuniao) 2(confirmar ou negar presença) 3(vizualizar ata de reuniao)"
-                      "/n 4(editar ata de reuniao) 5(baixar ata de reuniao) 6 (Adicionar participantes) 7( Redigir atas de reuniões do qual é o proprietário)"
-                      "/n 8( Editar atas de reuniões do qual é o proprietário) "
-                      "/n 9 (Sugerir local da reunião)"))
+     opcao = str(input("Escolha uma opção:\n"
+                       "1(criar reuniao)\n"
+                       "2(confirmar ou negar presença)\n"
+                       "3(vizualizar ata de reuniao)\n"
+                       "4(editar ata de reuniao)\n"
+                       "5(baixar ata de reuniao)\n"
+                       "6(Adicionar participantes)\n"
+                       "7( Redigir atas de reuniões do qual é o proprietário)\n"
+                      "8( Editar atas de reuniões do qual é o proprietário)\n"
+                      "9 (Sugerir local da reunião)"))
      if opcao == "1":
-        reuniao.tiporeuniao()
-        tipo = reuniao.tiporeuniao()
-        if tipo == "1":
-            if tipo == "1":
-                reuniao.reunioespublicas.append(reuniao.criarreuniao())
-            elif tipo == "2":
-                reuniao.reunioesprivadas.append(reuniao.criarreuniao())
+         print("CRIAR REUNIAO")
+         tipo = str(input("Coloque o tipo de reunião publica(1) privada(2)"))
+         if tipo == "1":
+             reuniaolist.criarreuniaoPrO()
+         elif tipo == "2":
+             reuniaolist.criarreuniaoPrO()
      elif opcao == "2":
         print("CONFIRMAR PRESENÇA")
      elif opcao == "3":
@@ -29,7 +34,7 @@ def ousuariomenu():
         print("EDITAR ATAS DE REUNIÃO DE QUAL SE E PROPRIETARIO")
      elif opcao == "9":
         print("SUGERIR LOCAL DE REUNIÃO")
-ousuariomenu()
+
 
 def criarreuniao():
         visibilidade = str(input("Sua reuniao é 1(publica) ou 2(privada)? "))
