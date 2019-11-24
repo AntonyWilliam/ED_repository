@@ -1,16 +1,15 @@
 import reuniaolist
+import usuarioativo
 def ousuariomenu():
 
      opcao = str(input("Escolha uma opção:\n"
                        "1(criar reuniao)\n"
                        "2(confirmar ou negar presença)\n"
                        "3(vizualizar ata de reuniao)\n"
-                       "4(editar ata de reuniao)\n"
-                       "5(baixar ata de reuniao)\n"
-                       "6(Adicionar participantes)\n"
-                       "7( Redigir atas de reuniões do qual é o proprietário)\n"
-                      "8( Editar atas de reuniões do qual é o proprietário)\n"
-                      "9 (Sugerir local da reunião)"))
+                       "4(baixar ata de reuniao)\n"
+                       "5(Adicionar participantes)\n"
+                      "6( Editar atas de reuniões do qual é o proprietário)\n"
+                      "7 (Sugerir local da reunião)"))
      if opcao == "1":
          print("CRIAR REUNIAO")
          tipo = str(input("Coloque o tipo de reunião publica(1) privada(2)"))
@@ -21,27 +20,13 @@ def ousuariomenu():
      elif opcao == "2":
         print("CONFIRMAR PRESENÇA")
      elif opcao == "3":
-        print("VIZUALIZAR ATA")
+        reuniaolist.visualizaratasOutro()
      elif opcao == "4":
-        print("EDITAR ATA")
+        reuniaolist.salvaratareuniaoOutro()
      elif opcao == "5":
-        print("BAIXAR ATA")
-     elif opcao == "6":
         print("ADICIONAR PARTICIPANTES")
+     elif opcao == "6":
+         reuniaolist.editaratasOutro()
      elif opcao == "7":
-        print("REDIGIR ATAS DE REUNIÕES DO QUAL E PROPRIETARIO")
-     elif opcao == "8":
-        print("EDITAR ATAS DE REUNIÃO DE QUAL SE E PROPRIETARIO")
-     elif opcao == "9":
         print("SUGERIR LOCAL DE REUNIÃO")
 
-
-def criarreuniao():
-        visibilidade = str(input("Sua reuniao é 1(publica) ou 2(privada)? "))
-
-        assunto = str(input("Defina o assunto da sua reuniao: "))
-        data = str(input("Defina a data da sua reuniao: "))
-        local = str(input("Defina o local da sua reuniao: "))
-        hinicial = str(input("Defina o horario de inicio da sua reuniao: "))
-        hfinal = str(input("Defina o horario em que sua reuniao encerra: "))
-        ata = str(input("Defina o horario em que sua reuniao encerra: "))

@@ -3,8 +3,6 @@ import usuarionovo
 import usuarioativo
 # import outromenu
 import sys
-reunioespublicas = []
-reunioesprivadas = []
 sistema = True
 
 
