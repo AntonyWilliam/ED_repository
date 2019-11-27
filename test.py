@@ -12,12 +12,12 @@ arq.close()  #infortante fechar o arquivo, se nao ele apaga e se perde
 
 #---------- varrer as infos dentro do arquivo ---------------------
 
-arq = open('ArqReuniões', 'r')
+arq = open('arquivoDeLogin', 'r')
 for linha in arq:
     valor = linha.split()
-    print(valor[2])
+    print(valor[0])
 arq.close()
-"""
+
 reunioespublicas = {}
 reunioespublicas["antony"] = "teu cu"
 reunioespublicas["antony2"] = "teu cu2"
@@ -26,4 +26,35 @@ for i in reunioespublicas.keys():
     if i=="Antony":
          valorchave = reunioespublicas.get(i)
          chave = i
-         print(chave, valorchave)
+         print(chave, valorchave)"""
+
+
+'''arq = open('arquivoDeLogin.txt', 'r')
+for linha in arq:
+    valor = linha.split()
+    print(valor[0])
+arq.close()'''
+
+
+participantes = []
+listadeespera = []
+for i in range(participantesquanti):
+    listadeespera.append(input("digite o username do usuario participante: "))
+
+
+
+naoconfirmouPr[nome] = listadeespera
+
+
+
+
+
+
+
+
+
+
+
+
+
+

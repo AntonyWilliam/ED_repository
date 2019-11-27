@@ -11,7 +11,7 @@ def omenuC():
         elif tipo == "2":
             reuniaolist.criarreuniaoPrC()
     elif opcao == "2":
-        print("CONFIRMAR PRESENÇA")
+        reuniaolist.confirmarpresença()
     elif opcao == "3":
         reuniaolist.visualizaratasCordenador()
     elif opcao == "4":
@@ -19,6 +19,6 @@ def omenuC():
     elif opcao == "5":
         reuniaolist.salvaratareuniaoCordenador()
     elif opcao == "6":
-        print("ADICIONAR PARTICIPANTE")
+        reuniaolist.outroaddparticipantes()
     elif opcao == "7":
-        print("REALOCAR REUNIÕES")
+        reuniaolist.mudarlocal()
